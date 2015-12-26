@@ -1,0 +1,40 @@
+
+@include font-face($fa-family-name,$file-path,normal,normal,$asset-pipeline:false);
+
+[class^="#{$fa-css-prefix}"],
+[class*="#{$fa-css-prefix}"] {
+    @include icon;
+}
+
+.#{$fa-css-prefix}search{
+    @include icon("before",false,"search"){
+        font-size: 2rem;
+        color: pink;
+        text-shadow: 1px 1px rgba(0,0,0,.5);
+    };
+}
+
+.#{$fa-css-prefix}book{
+    @include icon("before",false,"book");
+}
+
+.#{$fa-css-prefix}home{
+    @include icon("before",false,"home");
+}
+
+.#{$fa-css-prefix}user{
+    @include icon("before",false,"user");
+}
+
+.#{$fa-css-prefix}diamond{
+    @include icon("before",false,"diamond");
+}
+
+.#{$fa-css-prefix}cog{
+    @include icon("before",false,"cog");
+}
+
+.#{$fa-css-prefix}arrow-left{
+    @include icon("before",false,"arrow-left");
+}
+
