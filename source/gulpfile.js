@@ -4,11 +4,18 @@ var sass = require('gulp-sass');
 var prefix = require('gulp-autoprefixer');
 var uglify = require('gulp-uglify');
 var plumber = require('gulp-plumber');
+var wrap = require('gulp-wrap');
 
 function streamError(err) {
   gutil.beep();
   gutil.log(err instanceof gutil.PluginError ? err.toString() : err.stack);
 }
+
+gulp.task('build', function () {
+  gulp.src('pages/*.html')
+      .pipe(wrap({src:'layout/default.html'}))
+      .pipe(gulp.dest('..'));
+})
 
 gulp.task('sass',function(){
     gulp.src('styles/main.scss')
@@ -18,14 +25,9 @@ gulp.task('sass',function(){
         .pipe(gulp.dest('../styles'));
 });
 
-gulp.task('cp',function () {
-  gulp.src('index.html')
-      .pipe(gulp.dest('..'));
-});
-
 gulp.task('watch', function () {
-  gulp.watch(['*.html'], ['cp']);
+  gulp.watch(['**/*.html'], ['build']);
   gulp.watch(['styles/*.scss'], ['sass']);
 })
 
-gulp.task('default', ['sass', 'cp', 'watch']);
+gulp.task('default', ['sass', 'build', 'watch']);
