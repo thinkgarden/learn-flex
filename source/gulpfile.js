@@ -12,13 +12,18 @@ function streamError(err) {
   gutil.log(err instanceof gutil.PluginError ? err.toString() : err.stack);
 }
 
-gulp.task('browser-sync', ['sass', 'build'], function () {
+gulp.task('browser-sync', ['sass', 'build', 'cp'], function () {
   browserSync({
     server:{
       baseDir: '..'
     }
   });
-})
+});
+
+gulp.task('cp', function () {
+  return gulp.src('js/main.js', { base: '.' })
+         .pipe(gulp.dest('..'));
+});
 
 gulp.task('build', function () {
   gulp.src('pages/*.html')
@@ -41,8 +46,9 @@ gulp.task('sass',function(){
 });
 
 gulp.task('watch', function () {
-  gulp.watch(['**/*.html'], ['build']);
+  gulp.watch(['**/*.html'], ['rebuild']);
   gulp.watch(['styles/*.scss'], ['sass']);
+  gulp.watch(['js/main.js'], ['cp'])
 })
 
 gulp.task('default', ['browser-sync', 'watch']);
