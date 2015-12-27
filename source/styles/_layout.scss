@@ -67,11 +67,13 @@ body{
     family:$fontFamily;
   }
   line-height:$baseLineHeight;
+  overflow-y:scroll;
 }
 
 .sidebar{
   display:none;
   width:300px;
+  flex-shrink:0;
   background-color: $primary-color;
   a.active{
     color:$primary-color-text;
