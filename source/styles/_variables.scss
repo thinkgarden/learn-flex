@@ -7,9 +7,12 @@ $primary-color-text:   #FFFFFF;
 $accent-color:         #536DFE;
 $primary-text-color:   #212121;
 $secondary-text-color: #727272;
+$bg-color:             #fafafa;
 $divider-color:        #B6B6B6;
 
 $baseFontSize:16px !default;
+$smallFontSize:14px !default;
+$mediumFontSize:17px !default;
 $largeFontSize:18px !default;
 $smallFontSize:12px !default;
 $baseLineHeight: 1.8 !default;
@@ -169,6 +172,9 @@ $icons:
     twitter                     "\f099",
     facebook                    "\f09a",
     github                      "\f09b",
+    wechat                      "\f1d7",
+    weibo                       "\f18a",
+    weixin                      "\f1d7",
     unlock                      "\f09c",
     credit-card                 "\f09d",
     rss                         "\f09e",

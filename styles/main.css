@@ -1,7 +1,7 @@
 @charset "UTF-8";
-html, body, h1, h2, h3, h4, h5, h6, blockquote, p,
-pre, dl, dd, ol, ul, li, a, span, caption, th, td,
-form, fieldset, legend, input, button, textarea, address {
+html, body, h1, h2, h3, h4, h5, h6, blockquote, pre,
+dl, dd, ol, ul, li, a, span, caption, th, td, form,
+fieldset, legend, input, button, textarea, address {
   margin: 0;
   padding: 0; }
 
@@ -13,6 +13,9 @@ a {
 
 a, label, :focus {
   outline: 0 none; }
+
+ol, ul {
+  list-style: outside none none; }
 
 @font-face {
   font-family: "FontAwesome";
@@ -55,7 +58,17 @@ a, label, :focus {
 .fa-arrow-left:before {
   content: ""; }
 
+.fa-weibo:before {
+  content: ""; }
+
+.fa-github:before {
+  content: ""; }
+
+.fa-twitter:before {
+  content: ""; }
+
 body {
+  font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   color: #727272; }
 
@@ -136,7 +149,7 @@ body {
       -ms-flex-positive: 1;
           flex-grow: 1;
   background-color: #fafafa;
-  padding: 16px;
+  position: relative;
   line-height: 1.8;
   font-size: 16px;
   font-family: Arial, Helvetica;
@@ -175,7 +188,7 @@ body {
       display: inline-block;
       margin-right: 10px; }
 
-@media only screen and (min-width: 620px) {
+@media only screen and (min-width: 800px) {
   .app-wrap {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -235,55 +248,128 @@ body {
       cursor: pointer;
       box-shadow: 0 1px 12px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.24); }
 
-.btn {
-  background-color: #EA424F;
-  color: #FFFFFF;
-  font-size: 20px;
-  display: inline-block;
-  margin-bottom: 10px;
-  padding: 10px; }
+.about h2, .about .hobby, .about .email, .about .weixin, .about .social {
+  margin-left: 16px; }
 
-.btn-green {
-  background-color: #78C576; }
+.about {
+  margin-bottom: 30px;
+  font-size: 15px; }
+  @media (min-width: 768px) {
+    .about {
+      text-align: center;
+      font-size: 17px; } }
+  .about .background {
+    background: url("../assets/beauty.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 260px;
+    margin-bottom: 10px; }
+  .about .avatar {
+    display: block;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid #fafafa;
+    background: #fafafa;
+    margin: 0 auto;
+    margin-top: -50px; }
+  .about h2 {
+    font-size: 20px;
+    color: #E91E63;
+    border-left: 5px solid #C2185B;
+    padding-left: 24px;
+    line-height: 1.5;
+    margin-bottom: 24px; }
+    @media (min-width: 768px) {
+      .about h2 {
+        margin: 35px auto;
+        padding-left: 0;
+        padding-bottom: 10px;
+        width: 100px;
+        font-size: 24px;
+        border-left: none;
+        border-bottom: 5px solid #C2185B; } }
+  .about .email {
+    margin-bottom: 10px; }
+  .about .weixin {
+    margin-bottom: 24px; }
+  .about .social li {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 10px;
+    background-color: #536DFE; }
+  .about .social i {
+    font-size: 16px;
+    color: #fff;
+    line-height: 40px; }
 
-.show_time {
-  display: inline-block;
-  font-size: 25px;
-  margin-left: 10px; }
-
-.mod {
+.home {
   position: absolute;
-  width: 100%;
-  height: 200px;
-  background: rgba(61, 61, 61, 0.71);
-  color: #fff;
-  top: 80px;
-  left: 0;
-  text-align: center;
-  font-size: 25px;
-  line-height: 200px;
-  font-weight: blod; }
-
-.touchPad {
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
-  font-size: 40px;
-  line-height: 200px;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.5);
-  position: relative;
-  color: #ddd; }
-
-.ball {
-  display: none;
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background-color: #7AE6FF;
   top: 0;
-  left: 0; }
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(../assets/home-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed; }
+  .home .overlay {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase; }
+  .home .title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    margin-top: 0; }
+    .home .title .name {
+      color: #E91E63; }
+  .home .subtitle {
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: 38px; }
+  .home button {
+    display: inline-block;
+    border: 0;
+    height: 36px;
+    min-width: 100px;
+    font-size: 14px;
+    color: #FFFFFF;
+    background: #C2185B;
+    border-radius: 2px;
+    text-transform: uppercase; }
+    .home button:focus {
+      outline: none; }
+    .home button:hover {
+      background-color: #536DFE; }
 
-p {
-  height: 30px; }
+.blogs {
+  margin: 0 auto;
+  padding: 16px; }
+  .blogs .post {
+    background-color: #FFF;
+    padding: 10px;
+    margin: 20px 0; }

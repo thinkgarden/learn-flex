@@ -1,0 +1,78 @@
+%ml-16{
+  margin-left: 16px;
+}
+.about{
+  margin-bottom: 30px;
+  font-size: 15px;
+  @media(min-width:768px){
+    text-align:center;
+    font-size:$mediumFontSize;
+  }
+  .background{
+    background: url("../assets/beauty.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 260px;
+    margin-bottom: 10px;
+  }
+  .avatar{
+    display: block;
+    width:100px;
+    height:100px;
+    padding: 5px;
+    border-radius:50%;
+    border:1px solid $bg-color;
+    background: $bg-color;
+    margin:0 auto;
+    margin-top:-50px;
+  }
+  h2{
+    font-size:20px;
+    color:$primary-color;
+    border-left:5px solid $primary-color-dark;
+    padding-left: 24px;
+    line-height:1.5;
+    margin-bottom: 24px;
+    @extend %ml-16;
+    @media(min-width:768px){
+      margin:35px auto;
+      padding-left:0;
+      padding-bottom:10px;
+      width:100px;
+      font-size:24px;
+      border-left:none;
+      border-bottom:5px solid $primary-color-dark;
+    }
+  }
+  .hobby{
+    @extend %ml-16;
+  }
+  .email{
+    @extend %ml-16;
+    margin-bottom: 10px;
+  }
+  .weixin{
+    @extend %ml-16;
+    margin-bottom: 24px;
+  }
+  .social{
+    @extend %ml-16;
+    li {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 50%;
+      text-align: center;
+      margin-right: 10px;
+      background-color: $accent-color;
+    }
+    i {
+      font-size: 16px;
+      color: #fff;
+      line-height: 40px;
+    }
+  }
+}
+

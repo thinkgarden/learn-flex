@@ -38,3 +38,14 @@
     @include icon("before",false,"arrow-left");
 }
 
+.#{$fa-css-prefix}weibo{
+    @include icon("before",false,"weibo");
+}
+
+.#{$fa-css-prefix}github{
+    @include icon("before",false,"github");
+}
+
+.#{$fa-css-prefix}twitter{
+    @include icon("before",false,"twitter");
+}
