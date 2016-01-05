@@ -1,9 +1,57 @@
 .blogs{
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   padding:16px;
+  @media (min-width: 1068px) {
+    width: 700px;
+    margin: 30px auto;
+  }
   .post{
-    background-color: #FFF;
-    padding: 10px;
-    margin:20px 0;
+    background-color: white;
+    margin-bottom:40px;
+    border-radius:10px;
+    border-bottom: 1px solid #d9d9d9;
+    box-shadow: 0 0 2px rgba(0,0,0,0.12),0 2px 4px rgba(0,0,0,0.24);
+    display: flex;
+    flex-direction: column;
+    .p-header{
+      height:80px;
+      background: $primary-color;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align:center;
+      border-radius: 10px 10px 0 0;
+      span{
+        color:$primary-color-text;
+        width:40px;
+        height:40px;
+        line-height:40px;
+        border-radius:50%;
+        border:1px solid #fff;
+        margin: 0 auto;
+      }
+    }
+    .p-content{
+      padding:16px;
+      h1{
+        margin-top:0;
+        font-size:18px;
+      }
+    }
+    .p-action{
+      transition: all 450ms ease;
+      display: inline-block;
+      border:1px solid $accent-color;
+      border-radius:20px;
+      padding:5px 20px;
+      color:$accent-color;
+      font-size:$smallFontSize;
+      background: #fff;
+      &:hover{
+        background: $accent-color;
+        color:#fff;
+      }
+    }
   }
 }

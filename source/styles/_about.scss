@@ -4,7 +4,7 @@
 .about{
   margin-bottom: 30px;
   font-size: 15px;
-  @media(min-width:768px){
+  @media(min-width:$break-point){
     text-align:center;
     font-size:$mediumFontSize;
   }
@@ -26,6 +26,11 @@
     background: $bg-color;
     margin:0 auto;
     margin-top:-50px;
+    @media(min-width:$break-point){
+      width:150px;
+      height:150px;
+      margin-top:-85px;
+    }
   }
   h2{
     font-size:20px;
